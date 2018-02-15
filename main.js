@@ -68,6 +68,9 @@ const landing = {
                     }
                 );
             }
+        },
+        mounted: function () {
+            this.updateInfo();
         }
     },
 }
