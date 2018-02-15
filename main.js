@@ -1,7 +1,7 @@
 const mainCI = "https://ci.ender.zone/job/EssentialsX/";
 const mirrorCI = "https://ci.akpmakes.tech/job/EssentialsX/";
 
-axios.defaults.baseURL = mainCI;
+axios.defaults.baseURL = mirrorCI; // ender.zone doesn't allow CORS
 
 const landing = {
     html: `
