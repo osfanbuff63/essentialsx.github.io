@@ -28,7 +28,7 @@ const landing = {
         </section>
         <h2>Help for EssentialsX</h2>
         <section>
-            <a href="/#/Home">Go to EssentialsX Wiki</a>
+            <router-link to="/Home">Go to EssentialsX Wiki</router-link>
         </section>
     </div>
     </transition>
