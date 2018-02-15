@@ -51,7 +51,7 @@ const landing = {
                 axios.get("lastSuccessfulBuild/api/json")
                     .then(response => {
                         this.buildNo = response.data.id;
-                        this.plugins = response.data.artifacts.filter(artifact => {
+                        this.plugins = response.data.artifacts.map(artifact => {
                             return {
                                 name: `EssentialsX ${artifact.displayPath.match(/EssentialsX([A-Za-z]*)/)}`,
                                 main: `${mainCI}lastSuccessfulBuild/artifact/${artifact.relativePath}`,
