@@ -53,7 +53,7 @@ const landing = {
                         this.buildNo = response.data.id;
                         this.plugins = response.data.artifacts.map(artifact => {
                             return {
-                                name: `EssentialsX ${artifact.displayPath.match(/EssentialsX([A-Za-z]*)/)}`,
+                                name: `EssentialsX ${artifact.displayPath.match(/EssentialsX([A-Za-z]*)/)[1]}`,
                                 main: `${mainCI}lastSuccessfulBuild/artifact/${artifact.relativePath}`,
                                 mirror: `${mirrorCI}lastSuccessfulBuild/artifact/${artifact.relativePath}`,
                             };
