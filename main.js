@@ -100,7 +100,7 @@ docute.init({
             ],
         },
         { title: "Common Issues", path: "/Common-Issues" },
-        { title: "GitHub Issues", path: "https://github.com/EssentialsX/Essentials" },
+        { title: "Issue Tracker", path: "https://github.com/EssentialsX/Essentials/issues" },
         { title: "Discord", path: "/Discord-Rules" }
     ],
     debug: true
