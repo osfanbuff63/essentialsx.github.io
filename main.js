@@ -81,6 +81,7 @@ docute.init({
     home: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/Home.md",
     landing,
     tocVisibleDepth: 3,
+    disableSidebarToggle: true,
     icons: [
         { icon: "edit", label: "Source Wiki", link: "https://github.com/EssentialsX/Essentials/wiki" },
         { icon: "github", label: "EssentialsX on GitHub", link: "https://github.com/EssentialsX/Essentials" }
