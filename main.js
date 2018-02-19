@@ -80,35 +80,27 @@ docute.init({
     url: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/",
     home: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/Home.md",
     landing,
+    tocVisibleDepth: 3,
+    icons: [
+        { icon: "edit", label: "Source Wiki", link: "https://github.com/EssentialsX/Essentials/wiki" },
+        { icon: "github", label: "EssentialsX on GitHub", link: "https://github.com/EssentialsX/Essentials" }
+    ],
     nav: [
-        {
-            title: "Home",
-            path: "/",
-        },
+        { title: "Home", path: "/" },
         {
             title: "Wiki",
-            path: "/Home",
+            type: "dropdown",
+            items: [
+                { title: "Wiki Home", path: "/Home" },
+                { type: "sep" },
+                { type: "label", title: "Features" },
+                { title: "BannerMeta", path: "/BannerMeta" },
+                { title: "Command Cooldowns", path: "/Command-Cooldowns" }
+            ],
         },
-        {
-            title: "BannerMeta",
-            path: "/BannerMeta",
-        },
-        {
-            title: "Command Cooldowns",
-            path: "/Command-Cooldowns",
-        },
-        {
-            title: "Common Issues and FAQs",
-            path: "/Common-Issues",
-        },
-        {
-            title: "GitHub",
-            path: "https://github.com/EssentialsX/Essentials",
-        },
-        {
-            title: "Discord",
-            path: "/Discord-Rules",
-        }
+        { title: "Common Issues", path: "/Common-Issues" },
+        { title: "GitHub Issues", path: "https://github.com/EssentialsX/Essentials" },
+        { title: "Discord", path: "/Discord-Rules" }
     ],
     debug: true
 });
