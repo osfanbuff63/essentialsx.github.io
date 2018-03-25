@@ -25,6 +25,7 @@ docute.init({
                 { title: "Wiki Home", path: "/Home" },
                 { type: "sep" },
                 { type: "label", title: "Features" },
+                { title: "Improvements", path: "/Improvements", source: "Home.md" },
                 { title: "BannerMeta", path: "/BannerMeta" },
                 { title: "Command Cooldowns", path: "/Command-Cooldowns" }
             ],
