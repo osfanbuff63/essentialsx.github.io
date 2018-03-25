@@ -1,5 +1,5 @@
 const re = /\[\[([\w\s]+)\]\]/g; // [[SupaHam]]
-const rePiped = /\[\[([\w\s]+)(?:\|)(\w+)\]\]/g; // [[Pineapple|MD678685]]
+const rePiped = /\[\[([\w\s]+)(?:\|)([\w\-]+)\]\]/g; // [[Pineapple|MD678685]]
 
 const replacement = `<a class="router-link" href="#/$uri">$text</a>`;
 
