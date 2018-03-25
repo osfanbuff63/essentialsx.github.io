@@ -3,7 +3,8 @@ const mirrorCI = "https://ci.akpmakes.tech/job/EssentialsX/";
 
 axios.defaults.baseURL = mirrorCI; // ender.zone doesn't allow CORS
 
-const landing = window.dlPage;
+//const landing = window.landing;
+//const dlPage = window.dlPage;
 
 docute.init({
     url: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/",
