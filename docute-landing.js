@@ -4,7 +4,7 @@ const landing = {
         <p><img src="https://camo.githubusercontent.com/9ad178e5cf76a372d6aaee8bbdf13485fbc1d51b/68747470733a2f2f692e696d6775722e636f6d2f435034535a70422e706e67"></img></p>
         <p><i>This is not an official EssentialsX site.</i></p>
         <section>
-            <a class="big wiki" href="#/_Sidebar">Visit wiki</a>
+            <a class="big wiki" href="#/_DocuteHome">Visit wiki</a>
             <a class="big download" href="#" @click="toggleDownloads">
                 <span v-if="showDownloads">Hide downloads</span>
                 <span v-else>Show downloads</span>

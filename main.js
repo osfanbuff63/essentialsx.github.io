@@ -8,7 +8,7 @@ axios.defaults.baseURL = mirrorCI; // ender.zone doesn't allow CORS
 
 docute.init({
     url: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/",
-    home: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/Home.md",
+    home: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/_DocuteHome.md",
     landing,
     tocVisibleDepth: 3,
     disableSidebarToggle: true,
