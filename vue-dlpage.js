@@ -34,14 +34,14 @@ const DownloadPage = {
     },
     computed: {
         build() {
-            return this.buildNo ? `b${this.buildNo}` : "unknown";
+            return this.buildNo || "unknown";
         },
     },
     methods: {
         updateInfo() {
             axios.get("lastSuccessfulBuild/api/json")
                 .then(response => {
-                    this.buildNo = response.data.id;
+                    this.buildNo = getVersionFromArtifact(response.data.artifacts[0].displayPath);;
                     this.plugins = response.data.artifacts.map(artifact => {
                         return {
                             name: `EssentialsX ${artifact.displayPath.match(/EssentialsX([A-Za-z]*)/)[1]}`,
@@ -64,5 +64,15 @@ const DownloadPage = {
         this.updateInfo();
     }
 };
+
+const versionRegex = /EssentialsX[a-zA-Z]*-([0-9\.]+?)\.jar/;
+
+function getVersionFromArtifact(name) {
+    let m;
+
+    while ((m = versionRegex.exec(name)) !== null) {
+       return m[1];
+    }
+}
 
 window.DownloadPage = DownloadPage;
