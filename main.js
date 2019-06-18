@@ -1,5 +1,5 @@
 const mainCI = "https://ci.ender.zone/job/EssentialsX/";
-const mirrorCI = "https://ci.akpmakes.tech/job/EssentialsX/";
+const mirrorCI = null; // "https://ci.akpmakes.tech/job/EssentialsX/";
 const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
 
 axios.defaults.baseURL = corsAnywhere + mainCI;

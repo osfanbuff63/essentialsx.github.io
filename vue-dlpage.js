@@ -13,13 +13,11 @@ const DownloadPage = {
         <table v-if="buildNo">
             <tr>
                 <th>Plugin</th>
-                <th>Main</th>
-                <th>Mirror</th>
+                <th>Download</th>
             </tr>
             <tr v-for="plugin in plugins" :key="plugin.name">
                 <td>{{ plugin.name }}</td>
-                <td><a :href="plugin.main">Download</a></td>
-                <td><a :href="plugin.mirror">Download</a></td>
+                <td><a :href="plugin.main">Download</a> <a v-if="plugin.mirror" :href="plugin.mirror">(mirror)</a></td>
             </tr>
         </table>
         <button @click="updateInfo">Update</button>
@@ -46,7 +44,7 @@ const DownloadPage = {
                         return {
                             name: `EssentialsX ${artifact.displayPath.match(/EssentialsX([A-Za-z]*)/)[1]}`,
                             main: `${mainCI}lastSuccessfulBuild/artifact/${artifact.relativePath}`,
-                            mirror: `${mirrorCI}lastSuccessfulBuild/artifact/${artifact.relativePath}`,
+                            mirror: mirrorCI ? `${mirrorCI}lastSuccessfulBuild/artifact/${artifact.relativePath}` : null,
                         };
                     });
                     this.failed = null;
