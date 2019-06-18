@@ -1,5 +1,7 @@
-# EssentialsX Homepage
+# EssentialsX website
 
-This uses Docute to serve docs directly from the [EssentialsX wiki](https://github.com/EssentialsX/Essentials/wiki).
+Current official website for EssentialsX, including downloads and documentation.
 
-Downloads are retrieved from [AKP's CI](https://ci.akpmakes.tech/job/EssentialsX) using axios, and are displayed in-page with Vue.js.
+The site uses [Docute v3](https://v3.docute.org/) to serve docs directly from the [EssentialsX wiki](https://github.com/EssentialsX/Essentials/wiki).
+
+Download links are retrieved from [Jenkins](https://ci.ender.zone/job/EssentialsX) with [axios](https://github.com/axios/axios), and are displayed in-page with a custom Vue component.
