@@ -5,27 +5,13 @@ const landing = {
         <p><i>The official EssentialsX site.</i></p>
         <section>
             <a class="big wiki" href="#/_DocuteHome">Visit wiki</a>
-            <a class="big download" href="#" @click="toggleDownloads">
-                <span v-if="showDownloads">Hide downloads</span>
-                <span v-else>Show downloads</span>
-            </a>
         </section>
-        <DownloadPage v-if="showDownloads"></DownloadPage>
+        <DownloadPage></DownloadPage>
     </div>
     `,
     component: {
         components: {
             DownloadPage,
-        },
-        data() {
-            return {
-                showDownloads: false,
-            };
-        },
-        methods: {
-            toggleDownloads() {
-                this.showDownloads = !this.showDownloads;
-            }
         }
     },
 };
