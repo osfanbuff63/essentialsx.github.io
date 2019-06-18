@@ -2,13 +2,13 @@ const DownloadPage = {
     template: `
     <section>
         <h2>Download EssentialsX</h2>
+        <p class="tip">
+            Not sure what the different jars do? See the <a href="http://wiki.mc-ess.net/wiki/Breakdown">breakdown page</a>.
+        </p>
         <p v-if="buildNo">The latest version of EssentialsX is <b>{{build}}</b>.</p>
         <p v-if="failed" class="warning">
             Could not retrieve information about the latest version.
             Click <a href="https://ci.ender.zone/job/EssentialsX">here</a> to view builds on Jenkins.
-        </p>
-        <p class="tip">
-            Not sure what the different jars do? See the <a href="http://wiki.mc-ess.net/wiki/Breakdown">breakdown page</a>.
         </p>
         <table v-if="buildNo">
             <tr>
