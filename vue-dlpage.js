@@ -3,13 +3,14 @@ const DownloadPage = {
     <section>
         <h2>Download EssentialsX</h2>
         <p class="tip">
-            Not sure what the different jars do? See the <a href="http://wiki.mc-ess.net/wiki/Breakdown">breakdown page</a>.
+            Not sure what the different jars do? See the <a href="/#/Downloading-EssentialsX">downloads guide</a>.
         </p>
-        <p v-if="buildNo">The latest version of EssentialsX is <b>{{build}}</b>.</p>
         <p v-if="failed" class="warning">
             Could not retrieve information about the latest version.
             Click <a href="https://ci.ender.zone/job/EssentialsX">here</a> to view builds on Jenkins.
         </p>
+        <p v-if="loading"><i>Currently loading downloads, please wait...</i></p>
+        <p v-if="buildNo">The latest version of EssentialsX is <b>{{build}}</b>.</p>
         <table v-if="buildNo">
             <tr>
                 <th>Plugin</th>
@@ -20,13 +21,14 @@ const DownloadPage = {
                 <td><a :href="plugin.main">Download</a> <a v-if="plugin.mirror" :href="plugin.mirror">(mirror)</a></td>
             </tr>
         </table>
-        <button @click="updateInfo">Update</button>
+        <button v-if="!loading" @click="updateInfo">Refresh</button>
     </section>
     `,
     data() {
         return {
             buildNo: null,
             failed: null,
+            loading: null,
             plugins: [],
         };
     },
@@ -37,6 +39,7 @@ const DownloadPage = {
     },
     methods: {
         updateInfo() {
+            this.loading = true;
             axios.get("lastSuccessfulBuild/api/json")
                 .then(response => {
                     this.buildNo = getVersionFromArtifact(response.data.artifacts[0].displayPath);;
@@ -48,12 +51,14 @@ const DownloadPage = {
                         };
                     });
                     this.failed = null;
+                    this.loading = false;
                 }, error => {
                     if (error.response) {
                         this.failed = error.response.data;
                     } else {
                         this.failed = error.message;
                     }
+                    this.loading = false;
                 }
                 );
         }
