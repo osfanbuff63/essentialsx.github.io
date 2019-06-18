@@ -7,36 +7,41 @@ axios.defaults.baseURL = corsAnywhere + mainCI;
 //const landing = window.landing;
 //const dlPage = window.dlPage;
 
-docute.init({
-    url: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/",
-    home: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/_DocuteHome.md",
-    landing,
-    tocVisibleDepth: 3,
-    disableSidebarToggle: true,
-    icons: [
-        { icon: "edit", label: "Source Wiki", link: "https://github.com/EssentialsX/Essentials/wiki" },
-        { icon: "github", label: "EssentialsX on GitHub", link: "https://github.com/EssentialsX/Essentials" }
-    ],
+new Docute({
+    target: "#app",
+    sourcePath: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/",
+
+    //home: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/_DocuteHome.md",
+    //landing,
+    //tocVisibleDepth: 3,
+    //disableSidebarToggle: true,
+    // icons: [
+    //     { icon: "edit", label: "Source Wiki", link: "https://github.com/EssentialsX/Essentials/wiki" },
+    //     { icon: "github", label: "EssentialsX on GitHub", link: "https://github.com/EssentialsX/Essentials" }
+    // ],
+    layout: "narrow",
     nav: [
-        { title: "Home", path: "/" },
+        { title: "Home", link: "/" },
         {
             title: "Wiki",
-            type: "dropdown",
-            items: [
-                { title: "Wiki Home", path: "/Home" },
-                { type: "sep" },
+            children: [
+                { title: "Wiki Home", link: "/Home" },
                 { type: "label", title: "Features" },
-                { title: "Improvements", path: "/Improvements", source: "Home.md" },
-                { title: "BannerMeta", path: "/BannerMeta" },
-                { title: "Command Cooldowns", path: "/Command-Cooldowns" }
+                { title: "Improvements", link: "/Improvements", source: "Home.md" },
+                { title: "BannerMeta", link: "/BannerMeta" },
+                { title: "Command Cooldowns", link: "/Command-Cooldowns" }
             ],
         },
-        { title: "Common Issues", path: "/Common-Issues" },
-        { title: "Issue Tracker", path: "https://github.com/EssentialsX/Essentials/issues" },
-        { title: "Discord", path: "/Discord-Rules" }
+        { title: "Common Issues", link: "/Common-Issues" },
+        { title: "Issue Tracker", link: "https://github.com/EssentialsX/Essentials/issues" },
+        { title: "Discord", link: "/Discord-Rules" }
     ],
     plugins: [
         docuteWikilink,
     ],
-    debug: true
+    routes: {
+        "/": {
+            file: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/_DocuteHome.md",
+        }
+    }
 });
