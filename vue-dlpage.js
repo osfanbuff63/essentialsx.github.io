@@ -68,7 +68,7 @@ const DownloadPage = {
     }
 };
 
-const versionRegex = /EssentialsX[a-zA-Z]*-([0-9\.]+?)\.jar/;
+const versionRegex = /EssentialsX[a-zA-Z]*-([0-9\.pre-]+?)\.jar/;
 
 function getVersionFromArtifact(name) {
     let m;
