@@ -8,8 +8,8 @@ axios.defaults.baseURL = corsAnywhere + mainCI;
 //const dlPage = window.dlPage;
 
 docute.init({
-    url: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/",
-    home: "https://raw.githubusercontent.com/wiki/EssentialsX/Essentials/_DocuteHome.md",
+    url: "https://raw.githubusercontent.com/EssentialsX/wiki/master/",
+    home: "https://raw.githubusercontent.com/EssentialsX/wiki/master/_DocuteHome.md",
     landing,
     tocVisibleDepth: 3,
     disableSidebarToggle: true,
@@ -33,7 +33,8 @@ docute.init({
         },
         { title: "Common Issues", path: "/Common-Issues" },
         { title: "Issue Tracker", path: "https://github.com/EssentialsX/Essentials/issues" },
-        { title: "Discord", path: "/Discord-Rules" }
+        { title: "Discord", path: "/Discord-Rules" },
+        { title: "New Website", path: "https://essentialsx.cf" }
     ],
     plugins: [
         docuteWikilink,
