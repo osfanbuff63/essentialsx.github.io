@@ -34,7 +34,7 @@ docute.init({
         { title: "Common Issues", path: "/Common-Issues" },
         { title: "Issue Tracker", path: "https://github.com/EssentialsX/Essentials/issues" },
         { title: "Discord", path: "/Discord-Rules" },
-        { title: "New Website", path: "https://essentialsx.cf" }
+        { title: "New Website", path: "https://essentialsx.net" }
     ],
     plugins: [
         docuteWikilink,
